@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать в CAI!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>CAI — Intelligent Litter Detection System</h1>
+
+    <form action="/submit" method="POST" enctype="multipart/form-data">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="surname">Фамилия:</label>
+        <input type="text" id="surname" name="surname" required>
+        <br>
+
+        <label for="mobile">Номер телефона:</label>
+        <input type="tel" id="mobile" name="mobile" required>
+        <br>
+
+        <label for="photo">Загрузить своё фото:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+        <br>
+
+        <button type="submit">GO!</button>
+    </form>
+
+    <div class="example">
+        <h2>Пример правильного фото:</h2>
+        <img src="{{ url_for('static', filename='example/img.png') }}" alt="Пример фото">
+    </div>
+</body>
+</html>
